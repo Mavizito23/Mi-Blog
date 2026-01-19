@@ -1,0 +1,12 @@
+{
+  "hash": "7896a5b125c7a7881110dc3b0a8df03d",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Mi primer análisis de datos con Python\"\nauthor: \"Mauri\"\ndate: \"2026-01-18\"\ncategories: [tutorial, python, visualizacion]\nimage: \"thumbnail.jpg\"\nexecute:\n  echo: true    # Muestra el código por defecto\n  warning: false # Oculta advertencias feas de librerías\n---\n\n## ¡Bienvenidos a mi blog!\n\nEste es mi primer post oficial. Como entusiasta de la tecnología, quería mostrar lo fácil que es integrar **Python** dentro de un entorno de publicación moderno como **Quarto**.\n\n### Creando datos sintéticos\n\nVamos a generar unos datos aleatorios para simular el crecimiento de un proyecto usando `numpy` y `matplotlib`.\n\n::: {#cell-fig-crecimiento .cell execution_count=1}\n``` {.python .cell-code code-fold=\"true\"}\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Configuración de estilo\nplt.style.use('ggplot')\n\n# Generar datos\nx = np.linspace(0, 10, 100)\ny = np.exp(x / 3) + np.random.normal(0, 1, 100)\n\n# Crear la gráfica\nplt.figure(figsize=(10, 6))\nplt.plot(x, y, color='#4472c4', linewidth=2, label='Tendencia Observada')\nplt.fill_between(x, y, color='#4472c4', alpha=0.2)\nplt.title('Análisis de Crecimiento Exponencial', fontsize=15)\nplt.xlabel('Tiempo (Semanas)', fontsize=12)\nplt.ylabel('Métricas de Impacto', fontsize=12)\nplt.legend()\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![Proyección de crecimiento basada en datos simulados.](index_files/figure-html/fig-crecimiento-output-1.png){#fig-crecimiento width=811 height=530}\n:::\n:::\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

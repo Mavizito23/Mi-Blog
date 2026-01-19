@@ -1,0 +1,43 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "MaviBlog"
+  description: "Explorando datos con Python y Quarto"
+  
+  # Barra de navegación superior
+  navbar:
+    background: primary
+    left:
+      - href: index.qmd
+        text: Inicio
+      - href: about.qmd
+        text: Sobre mí
+    right:
+      - icon: github
+        href: https://github.com/tu-usuario
+      - icon: twitter
+        href: https://twitter.com/tu-usuario
+
+  # Pie de página
+  page-footer:
+    left: "© 2026 Mauri"
+    right: "Hecho con [Quarto](https://quarto.org/)"
+
+format:
+  html:
+    theme: 
+      light: sandstone
+      dark: solar
+    css: styles.css
+    toc: true          # Tabla de contenidos a la derecha
+    toc-title: "Contenido"
+    code-fold: show    # Muestra el código por defecto pero permite contraerlo
+    code-copy: true    # Botón para copiar código
+    code-summary: "Ver código"
+
+# Configuración de ejecución global para Python
+execute:
+  freeze: auto         # Solo re-ejecuta si el archivo .qmd cambia
+  cache: true          # Acelera el renderizado guardando resultados previos

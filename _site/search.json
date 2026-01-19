@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "print(\"Python OK\")\n2 + 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MaviBlog",
+    "section": "",
+    "text": "Estimando el valor de Pi: El azar a nuestro favor\n\n\n\n\n\n\n\n\nJan 20, 2026\n\n\nMauricio Leon\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog:\nEste blog fue creado como un proyecto de pasatiempo en donde se busca mostrar algunas de las cosas aprendidas durante la carrera de Ingenieria Matematica, asi como las habilidades adquiridas posteriormente a la misma carrera.\n\n\nAbout me:\nMi nombre es Mauricio Leon, soy graduado de la Ingenieria en Matematicas de la Escuela Superior de Fisica y Matematicas (ESFM) del Insituto Politecnico Nacional (IPN). Me gusta estar aprendiendo constantemente y probarme a mi mismo con nuevos retos"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code.\n\n\nVer código\nprint(\"Hello WOrld!\")\n\n\nHello WOrld!"
+  },
+  {
+    "objectID": "posts/welcome/PrimerPost/index.html",
+    "href": "posts/welcome/PrimerPost/index.html",
+    "title": "Mi primer análisis de datos con Python",
+    "section": "",
+    "text": "Este es mi primer post oficial. Como entusiasta de la tecnología, quería mostrar lo fácil que es integrar Python dentro de un entorno de publicación moderno como Quarto.\n\n\nVamos a generar unos datos aleatorios para simular el crecimiento de un proyecto usando numpy y matplotlib.\n\n\nVer código\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Configuración de estilo\nplt.style.use('ggplot')\n\n# Generar datos\nx = np.linspace(0, 10, 100)\ny = np.exp(x / 3) + np.random.normal(0, 1, 100)\n\n# Crear la gráfica\nplt.figure(figsize=(10, 6))\nplt.plot(x, y, color='#4472c4', linewidth=2, label='Tendencia Observada')\nplt.fill_between(x, y, color='#4472c4', alpha=0.2)\nplt.title('Análisis de Crecimiento Exponencial', fontsize=15)\nplt.xlabel('Tiempo (Semanas)', fontsize=12)\nplt.ylabel('Métricas de Impacto', fontsize=12)\nplt.legend()\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: Proyección de crecimiento basada en datos simulados."
+  },
+  {
+    "objectID": "posts/welcome/PrimerPost/index.html#bienvenidos-a-mi-blog",
+    "href": "posts/welcome/PrimerPost/index.html#bienvenidos-a-mi-blog",
+    "title": "Mi primer análisis de datos con Python",
+    "section": "",
+    "text": "Este es mi primer post oficial. Como entusiasta de la tecnología, quería mostrar lo fácil que es integrar Python dentro de un entorno de publicación moderno como Quarto.\n\n\nVamos a generar unos datos aleatorios para simular el crecimiento de un proyecto usando numpy y matplotlib.\n\n\nVer código\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Configuración de estilo\nplt.style.use('ggplot')\n\n# Generar datos\nx = np.linspace(0, 10, 100)\ny = np.exp(x / 3) + np.random.normal(0, 1, 100)\n\n# Crear la gráfica\nplt.figure(figsize=(10, 6))\nplt.plot(x, y, color='#4472c4', linewidth=2, label='Tendencia Observada')\nplt.fill_between(x, y, color='#4472c4', alpha=0.2)\nplt.title('Análisis de Crecimiento Exponencial', fontsize=15)\nplt.xlabel('Tiempo (Semanas)', fontsize=12)\nplt.ylabel('Métricas de Impacto', fontsize=12)\nplt.legend()\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: Proyección de crecimiento basada en datos simulados."
+  },
+  {
+    "objectID": "posts/Valor de PI/index.html",
+    "href": "posts/Valor de PI/index.html",
+    "title": "Estimando el valor de Pi: El azar a nuestro favor",
+    "section": "",
+    "text": "Todos sabemos que el valor de \\(\\Pi\\) es aproximadamente \\(3.1415...\\) y tal vez la “Demostracion” nos la ensenaron en la secundaria o preparatoria. Pero y si lo vemos de otra manera?. A continuacion veremos otra forma de obtener el valor de \\(\\pi\\) pero con una herramienta muy poderosa llamada Simulacion de Montecarlo.\n\n\nAntes de proceder a trabajar en la busqueda del valor de \\(\\pi\\), de manera breve se explicara que es la simulacion de Montecarlo y como podemos utilizarla:\nLa simulación de Montecarlo es un tipo de algoritmo computacional que utiliza un muestreo aleatorio repetido para obtener la probabilidad de que ocurra una serie de resultados.\nEl Método de Montecarlo fue inventado por John von Neumann y Stanislaw Ulam durante la Segunda Guerra Mundial para mejorar la toma de decisiones en condiciones inciertas. Debe su nombre a una conocida ciudad casino, llamada Mónaco, ya que el elemento de azar es fundamental en el planteamiento del modelo, similar a un juego de ruleta.\nA diferencia de un modelo de pronóstico normal, la simulación de Montecarlo predice un conjunto de resultados basados en un rango estimado de valores frente a un conjunto de valores de entrada fijos. En otras palabras, una simulación de Montecarlo construye un modelo de posibles resultados aprovechando una distribución de probabilidad, como una distribución uniforme o normal, para cualquier variable que tenga incertidumbre inherente. A continuación, vuelve a calcular los resultados una y otra vez, utilizando cada vez un conjunto diferente de números aleatorios entre los valores mínimo y máximo.\n\n\n\nSabemos por las formulitas que nos ensenaron en la primaria, las areas del cuadrado y del circulo se calculan como sigue:\n\\[\\text{Area del circulo} = \\pi\\cdot r^2\\] \\[\\text{Area del cuadrado} = l^2\\]\n\n\n\nPara encontrar el valor de \\(\\pi\\), haremos uso de python, en particular las librerias de numpy y matplotlib, esto con la finalidad de mostrar graficamente lo que sucede al usar la Simulacion de Montecarlo. El algoritmo, se muestra a continuacion:\n\n\nVer código\n# Se cargan las librerias a utilizar\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# El algoritmo se crea como una funcion \ndef Simulacion(n):\n    # 1. Generar n puntos aleatorios en un espacio 2D (x, y)\n    puntos = np.random.uniform(-1, 1, (n, 2))\n    \n    # 2. Calcular la distancia al origen para cada punto (x^2 + y^2)\n    distancias = np.sum(puntos**2, axis=1)\n    \n    # 3. Contar cuántos puntos cayeron dentro del círculo (distancia &lt;= 1)\n    dentro = np.sum(distancias &lt;= 1)\n    \n    # 4. Aplicar la fórmula\n    return 4 * dentro / n\n\nn = 100000\nresultado = Simulacion(n)\nprint(f\"La estimación de PI es {resultado}\")\n\n\nLa estimación de PI es 3.14492\n\n\n\n\n\nA continuacion, vamos a explicar porque se define asi el algoritmo y porque funciona."
+  },
+  {
+    "objectID": "posts/Valor de PI/index.html#el-valor-de-pi",
+    "href": "posts/Valor de PI/index.html#el-valor-de-pi",
+    "title": "Estimando el valor de Pi: El azar a nuestro favor",
+    "section": "",
+    "text": "Todos sabemos que el valor de \\(\\Pi\\) es aproximadamente \\(3.1415...\\) y tal vez la “Demostracion” nos la ensenaron en la secundaria o preparatoria. Pero y si lo vemos de otra manera?. A continuacion veremos otra forma de obtener el valor de \\(\\pi\\) pero con una herramienta muy poderosa llamada Simulacion de Montecarlo.\n\n\nAntes de proceder a trabajar en la busqueda del valor de \\(\\pi\\), de manera breve se explicara que es la simulacion de Montecarlo y como podemos utilizarla:\nLa simulación de Montecarlo es un tipo de algoritmo computacional que utiliza un muestreo aleatorio repetido para obtener la probabilidad de que ocurra una serie de resultados.\nEl Método de Montecarlo fue inventado por John von Neumann y Stanislaw Ulam durante la Segunda Guerra Mundial para mejorar la toma de decisiones en condiciones inciertas. Debe su nombre a una conocida ciudad casino, llamada Mónaco, ya que el elemento de azar es fundamental en el planteamiento del modelo, similar a un juego de ruleta.\nA diferencia de un modelo de pronóstico normal, la simulación de Montecarlo predice un conjunto de resultados basados en un rango estimado de valores frente a un conjunto de valores de entrada fijos. En otras palabras, una simulación de Montecarlo construye un modelo de posibles resultados aprovechando una distribución de probabilidad, como una distribución uniforme o normal, para cualquier variable que tenga incertidumbre inherente. A continuación, vuelve a calcular los resultados una y otra vez, utilizando cada vez un conjunto diferente de números aleatorios entre los valores mínimo y máximo.\n\n\n\nSabemos por las formulitas que nos ensenaron en la primaria, las areas del cuadrado y del circulo se calculan como sigue:\n\\[\\text{Area del circulo} = \\pi\\cdot r^2\\] \\[\\text{Area del cuadrado} = l^2\\]\n\n\n\nPara encontrar el valor de \\(\\pi\\), haremos uso de python, en particular las librerias de numpy y matplotlib, esto con la finalidad de mostrar graficamente lo que sucede al usar la Simulacion de Montecarlo. El algoritmo, se muestra a continuacion:\n\n\nVer código\n# Se cargan las librerias a utilizar\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# El algoritmo se crea como una funcion \ndef Simulacion(n):\n    # 1. Generar n puntos aleatorios en un espacio 2D (x, y)\n    puntos = np.random.uniform(-1, 1, (n, 2))\n    \n    # 2. Calcular la distancia al origen para cada punto (x^2 + y^2)\n    distancias = np.sum(puntos**2, axis=1)\n    \n    # 3. Contar cuántos puntos cayeron dentro del círculo (distancia &lt;= 1)\n    dentro = np.sum(distancias &lt;= 1)\n    \n    # 4. Aplicar la fórmula\n    return 4 * dentro / n\n\nn = 100000\nresultado = Simulacion(n)\nprint(f\"La estimación de PI es {resultado}\")\n\n\nLa estimación de PI es 3.14492\n\n\n\n\n\nA continuacion, vamos a explicar porque se define asi el algoritmo y porque funciona."
+  }
+]
