@@ -1,1 +1,1 @@
-{"entries":[],"headings":["el-valor-de-pi","simulacion-de-montecarlo","aplicacion-de-la-simulacion-de-montecarlo-para-hallar-el-valor-de-pi","pi-por-simulacion-de-montecarlo","explicacion-del-codigo"]}
+{"entries":[{"caption":"Simulación de Montecarlo: Puntos verdes dentro del círculo vs rojos fuera.","key":"fig-montecarlo","order":{"number":1,"section":[0,1,3,0,0,0,0]}}],"headings":["el-valor-de-pi","qué-es-la-simulación-de-montecarlo","aplicación-para-hallar-el-valor-de-pi","implementación-en-python","explicación-de-los-resultados","conclusión"]}

@@ -1,10 +1,10 @@
 ---
-title: "Estimando el valor de Pi: El azar a nuestro favor"
+title: "Estimando el valor de Pi"
 author: "Mauricio Leon"
 date: "2026-01-20"
 categories: [matemáticas, python, simulación]
 
-image: "preview.png" # Puedes guardar la gráfica final con este nombre
+image: "preview.jpg" # Puedes guardar la gráfica final con este nombre
 execute:
   echo: true    # Muestra el código por defecto
   warning: false # Oculta advertencias feas de librerías
@@ -12,53 +12,77 @@ execute:
 
 ## El valor de PI
 
-Todos sabemos que el valor de $\Pi$ es aproximadamente $3.1415...$ y tal vez la "Demostracion" nos la ensenaron en la secundaria o preparatoria. Pero y si lo vemos de otra manera?. A continuacion veremos otra forma de obtener el valor de $\pi$ pero con una herramienta muy poderosa llamada *Simulacion de Montecarlo*.
+Todos sabemos que el valor de $\pi$ es aproximadamente $3.1415...$ y tal vez la "demostración" nos la enseñaron en la secundaria o preparatoria. Pero ¿y si lo vemos de otra manera? A continuación veremos otra forma de obtener el valor de $\pi$ pero con una herramienta muy poderosa llamada **Simulación de Montecarlo**.
 
-### SImulacion de Montecarlo
+### ¿Qué es la Simulación de Montecarlo?
 
-Antes de proceder a trabajar en la busqueda del valor de $\pi$, de manera breve se explicara que es la *simulacion de Montecarlo* y como podemos utilizarla:
+La simulación de Montecarlo es un tipo de algoritmo computacional que utiliza un muestreo aleatorio repetido para obtener la probabilidad de que ocurra una serie de resultados. 
 
-La simulación de Montecarlo es un tipo de algoritmo computacional que utiliza un muestreo aleatorio repetido para obtener la probabilidad de que ocurra una serie de resultados.
+Fue inventado por **John von Neumann** y **Stanislaw Ulam** durante la Segunda Guerra Mundial. Debe su nombre al famoso casino de Mónaco, ya que el elemento de azar es fundamental en el planteamiento del modelo, similar a un juego de ruleta. A diferencia de un modelo de pronóstico normal, esta simulación construye un modelo de posibles resultados aprovechando una distribución de probabilidad para cualquier variable que tenga incertidumbre inherente.
 
-El Método de Montecarlo fue inventado por John von Neumann y Stanislaw Ulam durante la Segunda Guerra Mundial para mejorar la toma de decisiones en condiciones inciertas. Debe su nombre a una conocida ciudad casino, llamada Mónaco, ya que el elemento de azar es fundamental en el planteamiento del modelo, similar a un juego de ruleta.
+### Aplicación para hallar el valor de PI
 
-A diferencia de un modelo de pronóstico normal, la simulación de Montecarlo predice un conjunto de resultados basados en un rango estimado de valores frente a un conjunto de valores de entrada fijos. En otras palabras, una simulación de Montecarlo construye un modelo de posibles resultados aprovechando una distribución de probabilidad, como una distribución uniforme o normal, para cualquier variable que tenga incertidumbre inherente. A continuación, vuelve a calcular los resultados una y otra vez, utilizando cada vez un conjunto diferente de números aleatorios entre los valores mínimo y máximo.
+Sabemos por las fórmulas que nos enseñaron en la primaria que las áreas del cuadrado y del círculo se calculan como sigue:
 
-### Aplicacion de la Simulacion de Montecarlo para hallar el valor de PI
+$$\text{Área del círculo} = \pi \cdot r^2$$
+$$\text{Área del cuadrado} = l^2$$
 
-Sabemos por las formulitas que nos ensenaron en la primaria, las areas del cuadrado y del circulo se calculan como sigue:
+Si inscribimos un círculo de radio $r=1$ dentro de un cuadrado de lado $l=2$, la relación de sus áreas es:
 
-$$\text{Area del circulo} = \pi\cdot r^2$$
-$$\text{Area del cuadrado} = l^2$$
+$$\frac{\text{Área del Círculo}}{\text{Área del Cuadrado}} = \frac{\pi \cdot 1^2}{2^2} = \frac{\pi}{4}$$
 
-### PI por Simulacion de Montecarlo
+Por lo tanto, si lanzamos miles de puntos aleatorios al cuadrado, la proporción que caiga dentro del círculo multiplicada por 4 nos dará el valor de $\pi$.
 
-Para encontrar el valor de $\pi$, haremos uso de python, en particular las librerias de `numpy` y `matplotlib`, esto con la finalidad de mostrar graficamente lo que sucede al usar la Simulacion de Montecarlo. El algoritmo, se muestra a continuacion:
+### Implementación en Python
+
+Haremos uso de `numpy` y `matplotlib` para mostrar gráficamente lo que sucede.
 
 ```{python}
-# Se cargan las librerias a utilizar
+#| label: fig-montecarlo
+#| fig-cap: "Simulación de Montecarlo: Puntos verdes dentro del círculo vs rojos fuera."
+
 import numpy as np
 import matplotlib.pyplot as plt
 
-# El algoritmo se crea como una funcion 
-def Simulacion(n):
-    # 1. Generar n puntos aleatorios en un espacio 2D (x, y)
+# Configuración de la simulación
+def ejecutar_simulacion(n):
+    # 1. Generar n puntos aleatorios en un espacio 2D (x, y) entre -1 y 1
     puntos = np.random.uniform(-1, 1, (n, 2))
     
-    # 2. Calcular la distancia al origen para cada punto (x^2 + y^2)
+    # 2. Calcular la distancia al origen (x^2 + y^2)
     distancias = np.sum(puntos**2, axis=1)
     
-    # 3. Contar cuántos puntos cayeron dentro del círculo (distancia <= 1)
-    dentro = np.sum(distancias <= 1)
+    # 3. Identificar puntos dentro del círculo (distancia <= 1)
+    dentro_mask = distancias <= 1
+    puntos_dentro = np.sum(dentro_mask)
     
-    # 4. Aplicar la fórmula
-    return 4 * dentro / n
+    # 4. Estimar Pi
+    pi_estimado = 4 * puntos_dentro / n
+    return puntos, dentro_mask, pi_estimado
 
-n = 100000
-resultado = Simulacion(n)
-print(f"La estimación de PI es {resultado}")
+# Ejecución
+n_puntos = 10000
+puntos, mascara, resultado = ejecutar_simulacion(n_puntos)
+
+# Graficar resultados
+plt.figure(figsize=(8, 8))
+plt.scatter(puntos[mascara, 0], puntos[mascara, 1], color='#2ecc71', s=1, label='Dentro')
+plt.scatter(puntos[~mascara, 0], puntos[~mascara, 1], color='#e74c3c', s=1, label='Fuera')
+
+# Dibujar el círculo teórico para referencia
+circulo = plt.Circle((0, 0), 1, color='black', fill=False, linewidth=2)
+plt.gca().add_artist(circulo)
+
+plt.title(f"Estimación de $\pi$ con {n_puntos} puntos: {resultado:.4f}")
+plt.axis('equal')
+plt.legend()
+plt.show()
 ```
 
-### Explicacion del codigo
-A continuacion, vamos a explicar porque se define asi el algoritmo y porque funciona.
+### Explicación de los resultados
 
+El algoritmo funciona porque estamos simulando un experimento físico de manera digital. Al calcular np.sum(puntos**2, axis=1), estamos aplicando el teorema de Pitágoras para saber qué tan lejos está cada punto del centro $(0,0)$. Si la distancia es menor o igual a 1, el punto "golpeó" el círculo. A medida que aumentas el valor de $n$ en el código, notarás que el valor estimado se acerca cada vez más al valor real de $3.14159...$
+
+### Conclusión
+
+La simulación de Montecarlo nos enseña que el azar, cuando se repite masivamente, revela patrones matemáticos exactos. Esta técnica no solo sirve para calcular $\pi$, sino que es fundamental hoy en día en física nuclear, finanzas y ciencia de datos.

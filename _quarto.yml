@@ -22,7 +22,7 @@ website:
 
   # Pie de página
   page-footer:
-    left: "© 2026 Mauri"
+    left: "© 2026 Mauricio Leon"
     right: "Hecho con [Quarto](https://quarto.org/)"
 
 format:

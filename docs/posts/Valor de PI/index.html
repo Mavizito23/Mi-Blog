@@ -394,10 +394,11 @@ window.Quarto = {
   <ul>
   <li><a href="#el-valor-de-pi" id="toc-el-valor-de-pi" class="nav-link active" data-scroll-target="#el-valor-de-pi">El valor de PI</a>
   <ul class="collapse">
-  <li><a href="#simulacion-de-montecarlo" id="toc-simulacion-de-montecarlo" class="nav-link" data-scroll-target="#simulacion-de-montecarlo">SImulacion de Montecarlo</a></li>
-  <li><a href="#aplicacion-de-la-simulacion-de-montecarlo-para-hallar-el-valor-de-pi" id="toc-aplicacion-de-la-simulacion-de-montecarlo-para-hallar-el-valor-de-pi" class="nav-link" data-scroll-target="#aplicacion-de-la-simulacion-de-montecarlo-para-hallar-el-valor-de-pi">Aplicacion de la Simulacion de Montecarlo para hallar el valor de PI</a></li>
-  <li><a href="#pi-por-simulacion-de-montecarlo" id="toc-pi-por-simulacion-de-montecarlo" class="nav-link" data-scroll-target="#pi-por-simulacion-de-montecarlo">PI por Simulacion de Montecarlo</a></li>
-  <li><a href="#explicacion-del-codigo" id="toc-explicacion-del-codigo" class="nav-link" data-scroll-target="#explicacion-del-codigo">Explicacion del codigo</a></li>
+  <li><a href="#qué-es-la-simulación-de-montecarlo" id="toc-qué-es-la-simulación-de-montecarlo" class="nav-link" data-scroll-target="#qué-es-la-simulación-de-montecarlo">¿Qué es la Simulación de Montecarlo?</a></li>
+  <li><a href="#aplicación-para-hallar-el-valor-de-pi" id="toc-aplicación-para-hallar-el-valor-de-pi" class="nav-link" data-scroll-target="#aplicación-para-hallar-el-valor-de-pi">Aplicación para hallar el valor de PI</a></li>
+  <li><a href="#implementación-en-python" id="toc-implementación-en-python" class="nav-link" data-scroll-target="#implementación-en-python">Implementación en Python</a></li>
+  <li><a href="#explicación-de-los-resultados" id="toc-explicación-de-los-resultados" class="nav-link" data-scroll-target="#explicación-de-los-resultados">Explicación de los resultados</a></li>
+  <li><a href="#conclusión" id="toc-conclusión" class="nav-link" data-scroll-target="#conclusión">Conclusión</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -412,55 +413,84 @@ window.Quarto = {
 
 <section id="el-valor-de-pi" class="level2">
 <h2 class="anchored" data-anchor-id="el-valor-de-pi">El valor de PI</h2>
-<p>Todos sabemos que el valor de <span class="math inline">\(\Pi\)</span> es aproximadamente <span class="math inline">\(3.1415...\)</span> y tal vez la “Demostracion” nos la ensenaron en la secundaria o preparatoria. Pero y si lo vemos de otra manera?. A continuacion veremos otra forma de obtener el valor de <span class="math inline">\(\pi\)</span> pero con una herramienta muy poderosa llamada <em>Simulacion de Montecarlo</em>.</p>
-<section id="simulacion-de-montecarlo" class="level3">
-<h3 class="anchored" data-anchor-id="simulacion-de-montecarlo">SImulacion de Montecarlo</h3>
-<p>Antes de proceder a trabajar en la busqueda del valor de <span class="math inline">\(\pi\)</span>, de manera breve se explicara que es la <em>simulacion de Montecarlo</em> y como podemos utilizarla:</p>
+<p>Todos sabemos que el valor de <span class="math inline">\(\pi\)</span> es aproximadamente <span class="math inline">\(3.1415...\)</span> y tal vez la “demostración” nos la enseñaron en la secundaria o preparatoria. Pero ¿y si lo vemos de otra manera? A continuación veremos otra forma de obtener el valor de <span class="math inline">\(\pi\)</span> pero con una herramienta muy poderosa llamada <strong>Simulación de Montecarlo</strong>.</p>
+<section id="qué-es-la-simulación-de-montecarlo" class="level3">
+<h3 class="anchored" data-anchor-id="qué-es-la-simulación-de-montecarlo">¿Qué es la Simulación de Montecarlo?</h3>
 <p>La simulación de Montecarlo es un tipo de algoritmo computacional que utiliza un muestreo aleatorio repetido para obtener la probabilidad de que ocurra una serie de resultados.</p>
-<p>El Método de Montecarlo fue inventado por John von Neumann y Stanislaw Ulam durante la Segunda Guerra Mundial para mejorar la toma de decisiones en condiciones inciertas. Debe su nombre a una conocida ciudad casino, llamada Mónaco, ya que el elemento de azar es fundamental en el planteamiento del modelo, similar a un juego de ruleta.</p>
-<p>A diferencia de un modelo de pronóstico normal, la simulación de Montecarlo predice un conjunto de resultados basados en un rango estimado de valores frente a un conjunto de valores de entrada fijos. En otras palabras, una simulación de Montecarlo construye un modelo de posibles resultados aprovechando una distribución de probabilidad, como una distribución uniforme o normal, para cualquier variable que tenga incertidumbre inherente. A continuación, vuelve a calcular los resultados una y otra vez, utilizando cada vez un conjunto diferente de números aleatorios entre los valores mínimo y máximo.</p>
+<p>Fue inventado por <strong>John von Neumann</strong> y <strong>Stanislaw Ulam</strong> durante la Segunda Guerra Mundial. Debe su nombre al famoso casino de Mónaco, ya que el elemento de azar es fundamental en el planteamiento del modelo, similar a un juego de ruleta. A diferencia de un modelo de pronóstico normal, esta simulación construye un modelo de posibles resultados aprovechando una distribución de probabilidad para cualquier variable que tenga incertidumbre inherente.</p>
 </section>
-<section id="aplicacion-de-la-simulacion-de-montecarlo-para-hallar-el-valor-de-pi" class="level3">
-<h3 class="anchored" data-anchor-id="aplicacion-de-la-simulacion-de-montecarlo-para-hallar-el-valor-de-pi">Aplicacion de la Simulacion de Montecarlo para hallar el valor de PI</h3>
-<p>Sabemos por las formulitas que nos ensenaron en la primaria, las areas del cuadrado y del circulo se calculan como sigue:</p>
-<p><span class="math display">\[\text{Area del circulo} = \pi\cdot r^2\]</span> <span class="math display">\[\text{Area del cuadrado} = l^2\]</span></p>
+<section id="aplicación-para-hallar-el-valor-de-pi" class="level3">
+<h3 class="anchored" data-anchor-id="aplicación-para-hallar-el-valor-de-pi">Aplicación para hallar el valor de PI</h3>
+<p>Sabemos por las fórmulas que nos enseñaron en la primaria que las áreas del cuadrado y del círculo se calculan como sigue:</p>
+<p><span class="math display">\[\text{Área del círculo} = \pi \cdot r^2\]</span> <span class="math display">\[\text{Área del cuadrado} = l^2\]</span></p>
+<p>Si inscribimos un círculo de radio <span class="math inline">\(r=1\)</span> dentro de un cuadrado de lado <span class="math inline">\(l=2\)</span>, la relación de sus áreas es:</p>
+<p><span class="math display">\[\frac{\text{Área del Círculo}}{\text{Área del Cuadrado}} = \frac{\pi \cdot 1^2}{2^2} = \frac{\pi}{4}\]</span></p>
+<p>Por lo tanto, si lanzamos miles de puntos aleatorios al cuadrado, la proporción que caiga dentro del círculo multiplicada por 4 nos dará el valor de <span class="math inline">\(\pi\)</span>.</p>
 </section>
-<section id="pi-por-simulacion-de-montecarlo" class="level3">
-<h3 class="anchored" data-anchor-id="pi-por-simulacion-de-montecarlo">PI por Simulacion de Montecarlo</h3>
-<p>Para encontrar el valor de <span class="math inline">\(\pi\)</span>, haremos uso de python, en particular las librerias de <code>numpy</code> y <code>matplotlib</code>, esto con la finalidad de mostrar graficamente lo que sucede al usar la Simulacion de Montecarlo. El algoritmo, se muestra a continuacion:</p>
-<div id="25d91621" class="cell" data-execution_count="1">
+<section id="implementación-en-python" class="level3">
+<h3 class="anchored" data-anchor-id="implementación-en-python">Implementación en Python</h3>
+<p>Haremos uso de <code>numpy</code> y <code>matplotlib</code> para mostrar gráficamente lo que sucede.</p>
+<div id="cell-fig-montecarlo" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Ver código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se cargan las librerias a utilizar</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># El algoritmo se crea como una funcion </span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Simulacion(n):</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 1. Generar n puntos aleatorios en un espacio 2D (x, y)</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    puntos <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, (n, <span class="dv">2</span>))</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 2. Calcular la distancia al origen para cada punto (x^2 + y^2)</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    distancias <span class="op">=</span> np.<span class="bu">sum</span>(puntos<span class="op">**</span><span class="dv">2</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3. Contar cuántos puntos cayeron dentro del círculo (distancia &lt;= 1)</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    dentro <span class="op">=</span> np.<span class="bu">sum</span>(distancias <span class="op">&lt;=</span> <span class="dv">1</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Configuración de la simulación</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ejecutar_simulacion(n):</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 1. Generar n puntos aleatorios en un espacio 2D (x, y) entre -1 y 1</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    puntos <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, (n, <span class="dv">2</span>))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 2. Calcular la distancia al origen (x^2 + y^2)</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    distancias <span class="op">=</span> np.<span class="bu">sum</span>(puntos<span class="op">**</span><span class="dv">2</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3. Identificar puntos dentro del círculo (distancia &lt;= 1)</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    dentro_mask <span class="op">=</span> distancias <span class="op">&lt;=</span> <span class="dv">1</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    puntos_dentro <span class="op">=</span> np.<span class="bu">sum</span>(dentro_mask)</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 4. Aplicar la fórmula</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">4</span> <span class="op">*</span> dentro <span class="op">/</span> n</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100000</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> Simulacion(n)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"La estimación de PI es </span><span class="sc">{</span>resultado<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 4. Estimar Pi</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    pi_estimado <span class="op">=</span> <span class="dv">4</span> <span class="op">*</span> puntos_dentro <span class="op">/</span> n</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> puntos, dentro_mask, pi_estimado</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejecución</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>n_puntos <span class="op">=</span> <span class="dv">10000</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>puntos, mascara, resultado <span class="op">=</span> ejecutar_simulacion(n_puntos)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Graficar resultados</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">8</span>))</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>plt.scatter(puntos[mascara, <span class="dv">0</span>], puntos[mascara, <span class="dv">1</span>], color<span class="op">=</span><span class="st">'#2ecc71'</span>, s<span class="op">=</span><span class="dv">1</span>, label<span class="op">=</span><span class="st">'Dentro'</span>)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>plt.scatter(puntos[<span class="op">~</span>mascara, <span class="dv">0</span>], puntos[<span class="op">~</span>mascara, <span class="dv">1</span>], color<span class="op">=</span><span class="st">'#e74c3c'</span>, s<span class="op">=</span><span class="dv">1</span>, label<span class="op">=</span><span class="st">'Fuera'</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Dibujar el círculo teórico para referencia</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>circulo <span class="op">=</span> plt.Circle((<span class="dv">0</span>, <span class="dv">0</span>), <span class="dv">1</span>, color<span class="op">=</span><span class="st">'black'</span>, fill<span class="op">=</span><span class="va">False</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>plt.gca().add_artist(circulo)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="ss">f"Estimación de $</span><span class="er">\</span><span class="ss">pi$ con </span><span class="sc">{</span>n_puntos<span class="sc">}</span><span class="ss"> puntos: </span><span class="sc">{</span>resultado<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'equal'</span>)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>La estimación de PI es 3.14492</code></pre>
+<div class="cell-output cell-output-display">
+<div id="fig-montecarlo" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-montecarlo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-montecarlo-output-1.png" width="665" height="655" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-montecarlo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Simulación de Montecarlo: Puntos verdes dentro del círculo vs rojos fuera.
+</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
-<section id="explicacion-del-codigo" class="level3">
-<h3 class="anchored" data-anchor-id="explicacion-del-codigo">Explicacion del codigo</h3>
-<p>A continuacion, vamos a explicar porque se define asi el algoritmo y porque funciona.</p>
+<section id="explicación-de-los-resultados" class="level3">
+<h3 class="anchored" data-anchor-id="explicación-de-los-resultados">Explicación de los resultados</h3>
+<p>El algoritmo funciona porque estamos simulando un experimento físico de manera digital. Al calcular np.sum(puntos**2, axis=1), estamos aplicando el teorema de Pitágoras para saber qué tan lejos está cada punto del centro <span class="math inline">\((0,0)\)</span>. Si la distancia es menor o igual a 1, el punto “golpeó” el círculo. A medida que aumentas el valor de <span class="math inline">\(n\)</span> en el código, notarás que el valor estimado se acerca cada vez más al valor real de <span class="math inline">\(3.14159...\)</span></p>
+</section>
+<section id="conclusión" class="level3">
+<h3 class="anchored" data-anchor-id="conclusión">Conclusión</h3>
+<p>La simulación de Montecarlo nos enseña que el azar, cuando se repite masivamente, revela patrones matemáticos exactos. Esta técnica no solo sirve para calcular <span class="math inline">\(\pi\)</span>, sino que es fundamental hoy en día en física nuclear, finanzas y ciencia de datos.</p>
 
 
 </section>
@@ -884,7 +914,7 @@ window.Quarto = {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2026 Mauri</p>
+<p>© 2026 Mauricio Leon</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
