@@ -1,13 +1,13 @@
 ---
-title: "Estimando el valor de Pi"
+title: "Estimando el valor de Pi con puntitos"
 author: "Mauricio Leon"
 date: "2026-01-20"
-categories: [matemáticas, python, simulación]
+categories: [geometría, python, simulación]
 
-image: "preview.jpg" # Puedes guardar la gráfica final con este nombre
+image: "preview.jpg" 
 execute:
-  echo: true    # Muestra el código por defecto
-  warning: false # Oculta advertencias feas de librerías
+  echo: true    
+  warning: false 
 ---
 
 ## El valor de PI
@@ -44,21 +44,18 @@ Haremos uso de `numpy` y `matplotlib` para mostrar gráficamente lo que sucede.
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Configuración de la simulación
+# Funcion de la simulación 
 def ejecutar_simulacion(n):
-    # 1. Generar n puntos aleatorios en un espacio 2D (x, y) entre -1 y 1
+
     puntos = np.random.uniform(-1, 1, (n, 2))
     
-    # 2. Calcular la distancia al origen (x^2 + y^2)
     distancias = np.sum(puntos**2, axis=1)
     
-    # 3. Identificar puntos dentro del círculo (distancia <= 1)
-    dentro_mask = distancias <= 1
-    puntos_dentro = np.sum(dentro_mask)
+    dentro_circulo = distancias <= 1
+    puntos_dentro = np.sum(dentro_circulo)
     
-    # 4. Estimar Pi
     pi_estimado = 4 * puntos_dentro / n
-    return puntos, dentro_mask, pi_estimado
+    return puntos, dentro_circulo, pi_estimado
 
 # Ejecución
 n_puntos = 10000

@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Mauricio Leon">
+<meta name="dcterms.date" content="2026-01-20">
 
-<title>MaviBlog</title>
+<title>Dos chicas, un juego de billar y probabilidad – MaviBlog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,33 +22,66 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d81b5271c8d56d131ceba8e77411f37b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-b81d20dc367211c84794672c8d0b6733.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-d81b5271c8d56d131ceba8e77411f37b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-d81b5271c8d56d131ceba8e77411f37b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-b81d20dc367211c84794672c8d0b6733.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-d81b5271c8d56d131ceba8e77411f37b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,35 +109,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -134,7 +140,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -302,11 +308,11 @@ window.Quarto = {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">MaviBlog</span>
     </a>
   </div>
@@ -317,11 +323,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Inicio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">Sobre mí</span></a>
   </li>  
 </ul>
@@ -345,112 +351,164 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Dos chicas, un juego de billar y probabilidad</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">probabilidad</div>
+                <div class="quarto-category">python</div>
+                <div class="quarto-category">simulación</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Mauricio Leon </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 20, 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Z2VvbWV0ciVDMyVBRGE=">geometría <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHJvYmFiaWxpZGFk">probabilidad <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHl0aG9u">python <span class="quarto-category-count">(2)</span></div><div class="category" data-category="c2ltdWxhY2klQzMlQjNu">simulación <span class="quarto-category-count">(2)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contenido</h2>
+   
+  <ul>
+  <li><a href="#el-problema-de-puzzle-del-billar" id="toc-el-problema-de-puzzle-del-billar" class="nav-link active" data-scroll-target="#el-problema-de-puzzle-del-billar">El problema de Puzzle del billar</a>
+  <ul class="collapse">
+  <li><a href="#enfoque-frecuentista" id="toc-enfoque-frecuentista" class="nav-link" data-scroll-target="#enfoque-frecuentista">Enfoque frecuentista</a></li>
+  <li><a href="#enfoque-bayesiano" id="toc-enfoque-bayesiano" class="nav-link" data-scroll-target="#enfoque-bayesiano">Enfoque bayesiano</a></li>
+  <li><a href="#simulación-de-montecarlo" id="toc-simulación-de-montecarlo" class="nav-link" data-scroll-target="#simulación-de-montecarlo">Simulación de Montecarlo</a></li>
+  <li><a href="#conclusión" id="toc-conclusión" class="nav-link" data-scroll-target="#conclusión">Conclusión</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">MaviBlog</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="cHJvYmFiaWxpZGFkJTJDcHl0aG9uJTJDc2ltdWxhY2klQzMlQjNu" data-listing-date-sort="1768888800000" data-listing-file-modified-sort="1769829633565" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="954">
-<div class="thumbnail"><a href="./posts/Bayesian Billiards/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/Bayesian Billiards/preview.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/Bayesian Billiards/index.html" class="no-external">Dos chicas, un juego de billar y probabilidad</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvYmFiaWxpZGFk'); return false;">probabilidad</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhY2klQzMlQjNu'); return false;">simulación</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/Bayesian Billiards/index.html" class="no-external">
-En muchos juegos por puntos, como el billar o el tenis de mesa, surge de manera natural la pregunta: dado el marcador actual, ¿qué probabilidad tiene cada jugador de ganar…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/Bayesian Billiards/index.html" class="no-external">
-<div class="listing-date">
-Jan 20, 2026
-</div>
-<div class="listing-author">
-Mauricio Leon
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Z2VvbWV0ciVDMyVBRGElMkNweXRob24lMkNzaW11bGFjaSVDMyVCM24=" data-listing-date-sort="1768888800000" data-listing-file-modified-sort="1769825007270" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="502">
-<div class="thumbnail"><a href="./posts/Valor de PI/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/Valor de PI/preview.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/Valor de PI/index.html" class="no-external">Estimando el valor de Pi con puntitos</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z2VvbWV0ciVDMyVBRGE='); return false;">geometría</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhY2klQzMlQjNu'); return false;">simulación</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/Valor de PI/index.html" class="no-external">
-Todos sabemos que el valor de <span class="math inline">\(\pi\)</span> es aproximadamente <span class="math inline">\(3.1415...\)</span> y tal vez la “demostración” nos la enseñaron en la secundaria o preparatoria. Pero ¿y si lo vemos de…<span class="math inline"></span><strong></strong>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/Valor de PI/index.html" class="no-external">
-<div class="listing-date">
-Jan 20, 2026
-</div>
-<div class="listing-author">
-Mauricio Leon
-</div>
-</a>
+<section id="el-problema-de-puzzle-del-billar" class="level2">
+<h2 class="anchored" data-anchor-id="el-problema-de-puzzle-del-billar">El problema de Puzzle del billar</h2>
+<p>En muchos juegos por puntos, como el billar o el tenis de mesa, surge de manera natural la pregunta: dado el marcador actual, ¿qué probabilidad tiene cada jugador de ganar el partido? Si conociéramos exactamente la habilidad de cada jugador, el problema sería sencillo de resolver con probabilidad elemental. Sin embargo, en la práctica esa habilidad es desconocida y solo podemos inferirla a partir de los puntos ya jugados.</p>
+<p>Este planteamiento da lugar al llamado <strong>Bayesian Billiards Problem</strong>, un ejemplo clásico que ilustra la diferencia entre el enfoque frecuentista y el bayesiano en estadística. En el escenario que estudiaremos, dos jugadoras A y B compiten por puntos independientes en una mesa de billar, en donde se lanza una bola de manera aleatoria la cual separa el lado de A (izquierdo) y el lado de la jugadora B (lado derecho), gana quien llega primero a 6, y el marcador actual es 5–3 a favor de A. A partir de este resultado parcial, queremos estimar la probabilidad de que B logre remontar y gane el partido.</p>
+<p>Desde el punto de vista frecuentista, se suele estimar la probabilidad de que A gane un punto usando la frecuencia observada (5 de 8), y con ese valor se calcula la probabilidad de que B gane tres puntos consecutivos. En contraste, el enfoque bayesiano modela la habilidad de A como un parámetro desconocido con una distribución previa, que se actualiza con los datos observados para obtener una distribución posterior, y a partir de ella se promedia la probabilidad de que B gane el partido.</p>
+<section id="enfoque-frecuentista" class="level3">
+<h3 class="anchored" data-anchor-id="enfoque-frecuentista">Enfoque frecuentista</h3>
+<p>Primero, tenemos el enfoque frecuentista, por lo que, partiendo de la información obtenida, sabemos que A tiene 5 puntos, B tiene 3 puntos y por ende, se han realizado 8 jugadas. Aquí se asume que la probabilidad de que A gane un punto es un parámetro fijo <span class="math inline">\(p\)</span>, y se estima con lo observado: <span class="math display">\[p = \dfrac{5}{8} \rightarrow q = 1-p = \dfrac{3}{8}\]</span></p>
+<p>Como la unica manera de que B gane es que realice 3 puntos seguidos tenemos que la probabilidad de que ocurra esto es: <span class="math display">\[P(\text{B gane}) = \left(\dfrac{3}{8} \right)^3 = \dfrac{27}{512} \approx 0.0527\]</span></p>
+<p>es decir, tenemos una probabilidad de <span class="math inline">\(5.27%\)</span> de que la jugadora B gane este juego.</p>
+</section>
+<section id="enfoque-bayesiano" class="level3">
+<h3 class="anchored" data-anchor-id="enfoque-bayesiano">Enfoque bayesiano</h3>
+<p>Sin embargo, para el enfoque bayesiano, esto no es correcto, pues el valor de <span class="math inline">\(p\)</span> ahora ya no es fijo, sino que se le da el tratamiento de una variable aleatoria en donde tenemos que: <span class="math display">\[\bullet p \sim Beta(1,1) \text{y uniforme}\]</span> <span class="math display">\[\bullet A \text{ya ganó 5 y }B \text{ya ganó 3}\]</span></p>
+<p>Por lo que ahora tenemos: <span class="math display">\[p | datos \sim Beta(1+5,1+3) = Beta(6,4)\]</span></p>
+<p>De aqui tenemos que la probabilidad gane este juego es: <span class="math display">\[P(B \text{gana} | p) = (1-p)^3\]</span></p>
+<p>La probabilidad bayesiana es el promedio posterior: <span class="math display">\[P(B \text{gana} | datos) = E[(1-p)^3]\]</span></p>
+<p>Pero como ya sabemos que <span class="math inline">\(p \sim Beta(6,4)\)</span>, entonces <span class="math display">\[E[(1-p)^3] = \dfrac{4\cdot 5 \cdot 6}{10\cdot 11 \cdot 12}=\dfrac{1}{11}\approx 0.0909\]</span></p>
+<p>Es decir, que desde el enfoque bayesiano tenemos una probabilidad de que B gane del <span class="math inline">\(9.09%\)</span>, es decir, casi el doble del enfoque frecuentista. Pero ¿Como sabremos quien tiene la razón? Para esto, haremós uso de la <strong>Simulación de Montecarlo</strong> y responder esta pregunta.</p>
+</section>
+<section id="simulación-de-montecarlo" class="level3">
+<h3 class="anchored" data-anchor-id="simulación-de-montecarlo">Simulación de Montecarlo</h3>
+<p>La idea es muy sencilla (al igual que el codigo): Vamos a tirar la bola de manera al azar en una mesa de billar, que, por comodidad tendrá una longitud de 1 y dependiendo donde caiga, ese será nuestro punto de <strong>separador</strong>, es decir, que una vez tengamos nuestra separación en la mesa, se vuelve a tirar la bola para saber si cae del lado izquierdo (lado de la jugadora A) o el lado derecho (de la jugadora B).</p>
+<p>Si durante 8 jugadas llegamos al escenario inicial, es decir, que la jugadora A ha acumulado 5 puntos y B 3 puntos, entonces, podemos continuar con el juego para ver quien es el vencedor, realizando este mismo juego una cantidad n, donde n es un numero considerablemente grande (recordar que entre más grande, mejor)</p>
+<p>Por último, contamos cuantas de esas partidas ideales (5-3), B salio victoriosa.</p>
+<p>El codigó de python es el siguiente:</p>
+<div id="f65af75c" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>contador <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">10_000</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;</span> n:</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    separador <span class="op">=</span> np.random.random()</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    bolas <span class="op">=</span> np.random.random(<span class="dv">8</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    jugador_A <span class="op">=</span> np.<span class="bu">sum</span>(bolas <span class="op">&lt;</span> separador)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    jugador_B <span class="op">=</span> np.<span class="bu">sum</span>(bolas <span class="op">&gt;=</span> separador)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> jugador_A <span class="op">==</span> <span class="dv">5</span> <span class="kw">and</span> jugador_B <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> jugador_A <span class="op">&lt;</span> <span class="dv">6</span> <span class="kw">and</span> jugador_B <span class="op">&lt;</span> <span class="dv">6</span>:</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>            bola <span class="op">=</span> np.random.random()</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> bola <span class="op">&lt;</span> separador:</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>                jugador_A <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>                jugador_B <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> jugador_B <span class="op">==</span> <span class="dv">6</span>:</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>            contador <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> plt.gca()</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>ax.set_facecolor(<span class="st">"#3a7352"</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.random.random(<span class="dv">8</span>)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>plt.scatter(bolas[bolas <span class="op">&lt;</span> separador], y[:<span class="dv">5</span>], color<span class="op">=</span><span class="st">'#2ecc71'</span>, s<span class="op">=</span><span class="dv">100</span>, label<span class="op">=</span><span class="st">'Puntos para A'</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>plt.scatter(bolas[bolas <span class="op">&gt;=</span> separador], y[<span class="dv">5</span>:], color<span class="op">=</span><span class="st">'#e74c3c'</span>, s<span class="op">=</span><span class="dv">100</span>, label<span class="op">=</span><span class="st">'Puntos para B'</span>)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span>separador, color<span class="op">=</span><span class="st">'black'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>plt.xlim([<span class="dv">0</span>,<span class="dv">1</span>])</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>plt.ylim([<span class="dv">0</span>,<span class="dv">1</span>])</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="ss">f"Partida al inicio del problema (puntos dados al azar)"</span>)</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Numero de partidas: </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Numero de veces que gana A: </span><span class="sc">{</span>n<span class="op">-</span>contador<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Numero de veces que gana B: </span><span class="sc">{</span>contador<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Probabilidad de que B gane: </span><span class="sc">{</span>contador<span class="op">/</span>n<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-2-output-1.png" width="655" height="357" class="figure-img"></p>
+</figure>
 </div>
 </div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Numero de partidas: 10000
+Numero de veces que gana A: 9098
+Numero de veces que gana B: 902
+Probabilidad de que B gane: 0.0902</code></pre>
 </div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</div>
+</section>
+<section id="conclusión" class="level3">
+<h3 class="anchored" data-anchor-id="conclusión">Conclusión</h3>
+<p>Como se puede observar, el resultado es el mismo que lo que plantea la estadistica bayesiana (o al menos se acerca mucho), por lo que, una vez la simulacion de montecarlo nos enseña como muchas veces no necesitamos formulas que pueden resultar complicadas o tediosas de entender, sino entender realmente el problema y con un par de lineas de codigo resolver este tipo de incognitas.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
